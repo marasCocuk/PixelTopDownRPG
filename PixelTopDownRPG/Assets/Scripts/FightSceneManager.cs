@@ -4,18 +4,23 @@ using UnityEngine;
 using Ahmet.Characters;
 
 
-namespace SA
+namespace GameMaster
 {
     public class FightSceneManager : MonoBehaviour
     {
-        Player player;
+
+        GameObject player;
+        List<GameObject> enemies;
 
 
 
-        void Start()
+
+        void CreatePlayer()
         {
+            player = new GameObject();
 
         }
+
 
     }
 
