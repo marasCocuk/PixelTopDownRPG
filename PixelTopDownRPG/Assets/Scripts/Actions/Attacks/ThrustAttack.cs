@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Ahmet.Attacks
+
+namespace Actions.Attacks
 {
-    public class DarkAttack : MagicalAttack
+    public class ThrustAttack : PhysicalAttack
     {
-        public DarkAttack(int attackPower, string attackName) : base(attackPower, attackName)
+
+
+        public ThrustAttack(int attackPower, string attackName) : base(attackPower, attackName)
         {
 
         }
@@ -14,6 +17,6 @@ namespace Ahmet.Attacks
         {
             // Karakterin canını bir miktar düşür.
         }
+
     }
 }
-

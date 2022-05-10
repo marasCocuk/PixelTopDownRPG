@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Ahmet.Characters;
+using CharacterTypes;
 
 
 namespace GameMaster

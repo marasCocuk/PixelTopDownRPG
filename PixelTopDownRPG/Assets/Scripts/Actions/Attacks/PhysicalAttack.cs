@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Ahmet.Attacks
+namespace Actions.Attacks
 {
     public abstract class PhysicalAttack : Attack
     {

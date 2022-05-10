@@ -1,9 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Ahmet.Attacks;
+using Actions.Attacks;
 
-namespace Ahmet.Characters
+namespace CharacterTypes
 {
     /// <summary>
     /// A class that is going to keep all character properties. 
@@ -36,7 +36,7 @@ namespace Ahmet.Characters
         /// </summary>
         public void UpdateHealth()
         {
-            maxHealth = baseHealth + (500 * level) + (100 * strength);
+            maxHealth = baseHealth + 500 * level + 100 * strength;
         }
 
         private List<Attack> attacks;

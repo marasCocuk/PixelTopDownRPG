@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace Ahmet.Characters
+namespace CharacterTypes
 {
     /// <summary>
     /// A class that is going to keep enemy type characters properties.

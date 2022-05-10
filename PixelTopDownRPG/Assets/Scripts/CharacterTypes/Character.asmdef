@@ -1,7 +1,9 @@
 {
-    "name": "Attack",
+    "name": "CharacterTypes",
     "rootNamespace": "",
-    "references": [],
+    "references": [
+        "GUID:6802825b3be3a5246808b956a0a20567"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

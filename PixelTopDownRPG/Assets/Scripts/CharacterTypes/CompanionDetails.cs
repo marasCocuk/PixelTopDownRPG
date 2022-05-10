@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace Ahmet.Characters
+namespace CharacterTypes
 {
     /// <summary>
     /// A class that is going to keep companion type characters properties.

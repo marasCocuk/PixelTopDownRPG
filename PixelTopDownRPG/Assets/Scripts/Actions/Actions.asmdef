@@ -1,9 +1,7 @@
 {
-    "name": "Character",
+    "name": "Actions",
     "rootNamespace": "",
-    "references": [
-        "GUID:6802825b3be3a5246808b956a0a20567"
-    ],
+    "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

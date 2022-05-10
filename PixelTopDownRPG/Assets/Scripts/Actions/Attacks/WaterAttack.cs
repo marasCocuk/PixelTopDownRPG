@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-namespace Ahmet.Attacks
+namespace Actions.Attacks
 {
-    public class LightningAttack : MagicalAttack
+    public class WaterAttack : MagicalAttack
     {
-        public LightningAttack(int attackPower, string attackName) : base(attackPower, attackName)
+        public WaterAttack(int attackPower, string attackName) : base(attackPower, attackName)
         {
 
         }
@@ -15,6 +14,6 @@ namespace Ahmet.Attacks
         {
             // Karakterin canını bir miktar düşür.
         }
-    }
 
+    }
 }
