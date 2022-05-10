@@ -14,11 +14,15 @@ namespace GameMaster
 
         private void Start()
         {
+            enemies = new List<GameObject>();
+
             CreatePlayer();
         }
 
 
-
+        /// <summary>
+        /// Adds player to scene
+        /// </summary>
         void CreatePlayer()
         {
             player = new GameObject("Player");
@@ -27,6 +31,11 @@ namespace GameMaster
             player.tag = "Player";
 
         }
+
+        /// <summary>
+        /// Adds entered enemies to scene. Dusmanlari sahneye ekler
+        /// </summary>
+        /// <param name="enemies"></param>
         void CreateEnemies(List<Enemy> enemies)
         {
             for (int i = 0; i < enemies.Count; i++)
@@ -34,8 +43,8 @@ namespace GameMaster
                 GameObject newEnemy = new GameObject("Enemy");
                 newEnemy.AddComponent<Enemy>();
                 newEnemy.AddComponent<SpriteRenderer>();
-                newEnemy.tag = "Player";
-                this.enemies.Add();
+                newEnemy.tag = "Enemy";
+                this.enemies.Add(newEnemy);
             }
         }
 
