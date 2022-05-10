@@ -5,7 +5,10 @@ using Ahmet.Attacks;
 
 namespace Ahmet.Characters
 {
-    public abstract class Character : MonoBehaviour
+    /// <summary>
+    /// A class that is going to keep all character properties. 
+    /// </summary>
+    public abstract class CharacterDetails : MonoBehaviour
     {
         public int baseHealth = 500;
         public int maxHealth;
@@ -19,7 +22,7 @@ namespace Ahmet.Characters
         /// Stats
         /// </summary>
 
-        public int strength; /* caný ve fizksel saldýrýlarý etkileyen stat*/
+        public int strength; /* canï¿½ ve fizksel saldï¿½rï¿½larï¿½ etkileyen stat*/
         public int dexterity;
         public int wisdom;
 
