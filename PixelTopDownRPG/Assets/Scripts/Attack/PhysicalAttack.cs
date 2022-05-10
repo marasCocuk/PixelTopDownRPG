@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Attack
+namespace Ahmet.Attacks
 {
     public abstract class PhysicalAttack : Attack
     {
-        public PhysicalAttack(int attackPower) : base(attackPower)
+        public PhysicalAttack(int attackPower, string attackName) : base(attackPower, attackName)
         {
 
         }

@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace Attack
+namespace Ahmet.Attacks
 {
     public class ThrustAttack : PhysicalAttack
     {
 
 
-        public ThrustAttack(int attackPower) : base(attackPower)
+        public ThrustAttack(int attackPower, string attackName) : base(attackPower, attackName)
         {
 
         }

@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Attack
+namespace Ahmet.Attacks
 {
     public class AirAttack : MagicalAttack
     {
-        public AirAttack(int attackPower) : base(attackPower)
+        public AirAttack(int attackPower, string attackName) : base(attackPower, attackName)
         {
 
         }

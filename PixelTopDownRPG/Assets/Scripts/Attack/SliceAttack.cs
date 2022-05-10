@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Attack
+namespace Ahmet.Attacks
 {
     public abstract class SliceAttack : PhysicalAttack
     {
-        public SliceAttack(int attackPower) : base(attackPower)
+        public SliceAttack(int attackPower, string attackName) : base(attackPower, attackName)
         {
         }
         override public void ExecuteAttack(/*Belli bir character*/)
