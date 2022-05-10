@@ -4,14 +4,16 @@ using UnityEngine;
 
 namespace Attack
 {
-    public abstract class SliceAttack : PhysicalAttack
+    public class LightAttack : MagicalAttack
     {
-        public SliceAttack(int attackPower) : base(attackPower)
+        public LightAttack(int attackPower) : base(attackPower)
         {
+
         }
         override public void ExecuteAttack(/*Belli bir character*/)
         {
             // Karakterin canını bir miktar düşür.
         }
     }
+
 }

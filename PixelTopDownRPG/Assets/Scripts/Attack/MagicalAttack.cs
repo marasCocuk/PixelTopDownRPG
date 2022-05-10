@@ -1,18 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class MagicalAttack : MonoBehaviour
+namespace Attack
 {
-    // Start is called before the first frame update
-    void Start()
+    public abstract class MagicalAttack : Attack
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+
+        public MagicalAttack(int attackPower) : base(attackPower)
+        {
+
+        }
+
+
     }
 }
+
