@@ -18,6 +18,7 @@ namespace GameMaster
         void CreatePlayer()
         {
             player = new GameObject();
+            player.AddComponent<Player>();
 
         }
 

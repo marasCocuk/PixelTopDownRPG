@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Ahmet.Characters
 {
-    public class Enemy : MonoBehaviour
+    public class Enemy : Character
     {
     }
 }

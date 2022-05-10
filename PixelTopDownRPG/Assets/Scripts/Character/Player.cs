@@ -6,7 +6,7 @@ using Ahmet.Attacks;
 
 namespace Ahmet.Characters
 {
-    public class Player
+    public class Player : Character
     {
         public int Health;
         List<Attack> attacks;
