@@ -11,6 +11,7 @@ namespace CharacterTypes
     public class PlayerDetails : CharacterDetails
     {
         public int coin = 0;
+        //public List<Item> Inventory;
 
         public PlayerDetails(int level, int strength, int vitality, int intelligence, int baseHealth = 500, int baseStamina = 100, int baseMagic = 0, int basisXpForRequiredToLevelUp = 100) : base(level, strength, vitality, intelligence, baseHealth = 500, baseStamina = 100, baseMagic = 0, basisXpForRequiredToLevelUp = 100)
         {

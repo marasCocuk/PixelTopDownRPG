@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using CharacterTypes;
 
 namespace InventorySystem.Consumables
 {
@@ -15,9 +16,9 @@ namespace InventorySystem.Consumables
             this.healthAmount = healthAmount;
         }
 
-        public int GetHealth()
+        public override void ExecuteItem(CharacterDetails character)
         {
-            return healthAmount;
+            character.Heal(healthAmount);
         }
     }
 }
