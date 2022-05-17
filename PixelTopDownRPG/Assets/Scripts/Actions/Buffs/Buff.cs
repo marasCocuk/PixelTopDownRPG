@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace Actions.Buffs
+namespace Actions
 {
-    public class Health : Buff
+    public abstract class Buff : Action
     {
 
     }

@@ -2,17 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Action : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+namespace Actions
+{
+    public abstract class Action
     {
-        
+        string name;
+        public string Name { get => name; set { name = value; } }
+        public Action()
+        {
+
+        }
+        public Action(string name)
+        {
+            Name = name;
+        }
     }
 }
+
