@@ -4,15 +4,31 @@ using UnityEngine;
 
 public class ExploreCharacterController : MonoBehaviour
 {
-    // Start is called before the first frame update
+
+    [SerializeField] float speedMultiplier = 5f;
+    float horizontalMovement;
+    float verticalMovement;
+    Rigidbody2D rigidbody2D;
     void Start()
     {
-        
+        rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        SetInput();
+    }
+
+
+
+    void SetInput()
+    {
+        horizontalMovement = Input.GetAxis("Horizontal") * Time.deltaTime * speedMultiplier;
+        verticalMovement = Input.GetAxis("Vertical") * Time.deltaTime * speedMultiplier;
+    }
+
+    void Move(Vector2 moveDirection)
+    {
+
     }
 }
