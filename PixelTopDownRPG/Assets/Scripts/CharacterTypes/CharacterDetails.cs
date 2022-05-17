@@ -16,28 +16,30 @@ namespace CharacterTypes
 
         //Health
 
-        public int baseHealth = 500;
+        public int baseHealth;
         public int maxHealth;
         public int currentHealth;
 
         //Stamina
 
-        public int baseStamina = 100;
+        public int baseStamina;
         public int maxStamina;
         public int currentStamina;
 
         //Magic
 
-        public int baseMagic = 0;
+        public int baseMagic;
         public int maxMagic;
         public int currentMagic;
 
         //Experience
 
-        public int basisXpForRequiredToLevelUp = 100;
+        public int basisXpForRequiredToLevelUp;
         public int level;
         public int xp;
         public int requiredXp;
+
+        public int upgradePoints = 0;
 
         /// <summary>
         /// Stats
@@ -51,13 +53,28 @@ namespace CharacterTypes
         /// Actions
         /// </summary>
 
-        private List<Attack> attacks;
+        public List<Attack> attacks;
+
+        public List<Attack> weaknesses;
+
+        public CharacterDetails(int level, int strength, int vitality, int intelligence, int baseHealth = 500, int baseStamina = 100, int baseMagic = 0, int basisXpForRequiredToLevelUp = 100)
+        {
+            this.level = level;
+            this.strength = strength;
+            this.vitality = vitality;
+            this.intelligence = intelligence;
+            this.baseHealth = baseHealth;
+            this.baseStamina = baseStamina;
+            this.baseMagic = baseMagic;
+            this.basisXpForRequiredToLevelUp = basisXpForRequiredToLevelUp;
+        }
 
         public void levelUp(/*prototip*/)
         {
             if (xp >= requiredXp)
             {
                 level++;
+                upgradePoints++;
                 xp = xp - requiredXp;
                 UpdateMaxXp();
                 UpdateHealth();
@@ -98,9 +115,22 @@ namespace CharacterTypes
             requiredXp = basisXpForRequiredToLevelUp + (level * level * 1000);
         }
 
+        /// <summary>
+        /// execute attack
+        /// </summary>
+        /// <param name="at">direct attack</param>
         public void Attack(Attack at)
         {
-            /*Saldýrý yap*/
+            at.ExecuteAttack();
+        }
+
+        /// <summary>
+        /// Random attack
+        /// </summary>
+        public void RandomAttack()
+        {
+            int index = Random.Range(0, attacks.Count + 1);
+            Attack(attacks[index]);
         }
     }
 }
