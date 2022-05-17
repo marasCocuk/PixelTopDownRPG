@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using CharacterTypes;
 
 namespace InventorySystem
 {
@@ -8,5 +9,9 @@ namespace InventorySystem
     {
         public string name;
         public int price;
+
+        public virtual void ExecuteItem(CharacterDetails character)
+        {
+        }
     }
 }

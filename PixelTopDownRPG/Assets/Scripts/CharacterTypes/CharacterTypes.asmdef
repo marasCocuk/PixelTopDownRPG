@@ -2,7 +2,8 @@
     "name": "CharacterTypes",
     "rootNamespace": "",
     "references": [
-        "GUID:6802825b3be3a5246808b956a0a20567"
+        "GUID:6802825b3be3a5246808b956a0a20567",
+        "GUID:1c06cb516bdceea4cbdc35240befc437"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
