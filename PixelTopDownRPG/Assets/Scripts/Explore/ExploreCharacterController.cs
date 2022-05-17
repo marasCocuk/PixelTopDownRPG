@@ -17,6 +17,8 @@ public class ExploreCharacterController : MonoBehaviour
     void Update()
     {
         SetInput();
+        Move(horizontalMovement, verticalMovement);
+
     }
 
 
@@ -27,8 +29,17 @@ public class ExploreCharacterController : MonoBehaviour
         verticalMovement = Input.GetAxis("Vertical") * Time.deltaTime * speedMultiplier;
     }
 
+    void Move(float xMovement, float yMovement)
+    {
+        Vector2 pos = rigidbody2D.position;
+        pos.x += xMovement;
+        pos.y += yMovement;
+        rigidbody2D.position = pos;
+
+    }
+
     void Move(Vector2 moveDirection)
     {
-
+        Move(moveDirection.x, moveDirection.y);
     }
 }
