@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Actions.Attacks;
+using InventorySystem.Consumables;
 
 namespace CharacterTypes
 {
@@ -57,6 +58,8 @@ namespace CharacterTypes
 
         public List<Attack> weaknesses;
 
+        public List<Consumables> ConsumableInventory;
+
         public CharacterDetails(int level, int strength, int vitality, int intelligence, int baseHealth = 500, int baseStamina = 100, int baseMagic = 0, int basisXpForRequiredToLevelUp = 100)
         {
             this.level = level;
@@ -81,6 +84,12 @@ namespace CharacterTypes
                 UpdateStamina();
                 UpdateMagic();
             }
+        }
+
+        public void ConsumeItem(int index)
+        {
+            ConsumableInventory[index].ExecuteItem(this);
+            ConsumableInventory.RemoveAt(index);
         }
 
         /// <summary>

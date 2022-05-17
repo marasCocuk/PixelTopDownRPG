@@ -6,8 +6,5 @@ namespace InventorySystem.Consumables
 {
     public abstract class Consumables : Item
     {
-        public void consume()
-        {
-        }
     }
 }

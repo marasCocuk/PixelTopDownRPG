@@ -13,10 +13,10 @@ namespace Actions.Attacks
         {
             this.attackPower = attackPower;
         }
-        virtual public void ExecuteAttack(/*Belli bir character*/)
+
+        public virtual void ExecuteAttack(/*Belli bir character*/)
         {
             // Karakterin canını bir miktar düşür.
         }
-
     }
 }
