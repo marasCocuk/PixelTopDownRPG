@@ -15,7 +15,7 @@ namespace CharacterTypes
         ///Important Values
         /// </summary>
 
-        public string name;
+        public string characterName;
 
         //Health
 

@@ -17,7 +17,7 @@ namespace CharacterTypes
         //{
         //}
 
-        public void Start()
+        public new void Start()
         {
             this.intelligence = 5;
             this.strength = 5;
