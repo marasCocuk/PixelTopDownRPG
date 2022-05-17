@@ -38,7 +38,6 @@ namespace CharacterTypes
         public int level;
         public int xp;
         public int requiredXp;
-
         public int upgradePoints = 0;
 
         /// <summary>
@@ -48,6 +47,7 @@ namespace CharacterTypes
         public int strength; /*Physical attack stat, affects stamina*/
         public int vitality; /* health and defensive stat*/
         public int intelligence; /*Magic point and magic attack.*/
+        public int agility; /*Dodge rate*/
 
         /// <summary>
         /// Actions
@@ -131,6 +131,43 @@ namespace CharacterTypes
         {
             int index = Random.Range(0, attacks.Count + 1);
             Attack(attacks[index]);
+        }
+
+        /// <summary>
+        /// Character health increase
+        /// </summary>
+        /// <param name="amount"></param>
+        public void Heal(int amount)
+        {
+            UpdateHealth();
+            currentHealth += amount;
+
+            if (currentHealth > maxHealth)
+            {
+                currentHealth = maxHealth;
+            }
+        }
+
+        /// <summary>
+        /// Character Health Decrease
+        /// </summary>
+        /// <param name="amount"></param>
+        public void TakeDamage(int amount)
+        {
+            UpdateHealth();
+            currentHealth -= amount;
+            if (currentHealth <= 0)
+            {
+                currentHealth = 0;
+                Death();
+            }
+        }
+
+        /// <summary>
+        /// Character Dies
+        /// </summary>
+        public virtual void Death()
+        {
         }
     }
 }
