@@ -15,27 +15,29 @@ namespace CharacterTypes
         ///Important Values
         /// </summary>
 
+        public string name;
+
         //Health
 
-        public int baseHealth;
+        public int baseHealth = 100;
         public int maxHealth;
         public int currentHealth;
 
         //Stamina
 
-        public int baseStamina;
+        public int baseStamina = 100;
         public int maxStamina;
         public int currentStamina;
 
         //Magic
 
-        public int baseMagic;
+        public int baseMagic = 0;
         public int maxMagic;
         public int currentMagic;
 
         //Experience
 
-        public int basisXpForRequiredToLevelUp;
+        public int basisXpForRequiredToLevelUp = 1000;
         public int level;
         public int xp;
         public int requiredXp;
@@ -60,17 +62,33 @@ namespace CharacterTypes
 
         public List<Consumables> ConsumableInventory;
 
-        public CharacterDetails(int level, int strength, int vitality, int intelligence, int baseHealth = 500, int baseStamina = 100, int baseMagic = 0, int basisXpForRequiredToLevelUp = 100)
+        public void Start()
         {
-            this.level = level;
-            this.strength = strength;
-            this.vitality = vitality;
-            this.intelligence = intelligence;
-            this.baseHealth = baseHealth;
-            this.baseStamina = baseStamina;
-            this.baseMagic = baseMagic;
-            this.basisXpForRequiredToLevelUp = basisXpForRequiredToLevelUp;
+            UpdateHealth();
+            UpdateMagic();
+            UpdateMaxXp();
+            UpdateStamina();
         }
+
+        public void Update()
+        {
+            if (xp >= requiredXp)
+            {
+                levelUp();
+            }
+        }
+
+        //public CharacterDetails(int level, int strength, int vitality, int intelligence, int baseHealth = 500, int baseStamina = 100, int baseMagic = 0, int basisXpForRequiredToLevelUp = 100)
+        //{
+        //    this.level = level;
+        //    this.strength = strength;
+        //    this.vitality = vitality;
+        //    this.intelligence = intelligence;
+        //    this.baseHealth = baseHealth;
+        //    this.baseStamina = baseStamina;
+        //    this.baseMagic = baseMagic;
+        //    this.basisXpForRequiredToLevelUp = basisXpForRequiredToLevelUp;
+        //}
 
         public void levelUp(/*prototip*/)
         {
@@ -83,6 +101,10 @@ namespace CharacterTypes
                 UpdateHealth();
                 UpdateStamina();
                 UpdateMagic();
+
+                currentHealth = maxHealth;
+                currentMagic = maxMagic;
+                currentStamina = maxStamina;
             }
         }
 
