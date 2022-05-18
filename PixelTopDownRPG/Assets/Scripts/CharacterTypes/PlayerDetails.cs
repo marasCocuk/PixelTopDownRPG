@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Actions.Attacks;
+using InventorySystem;
 
 namespace CharacterTypes
 {
@@ -22,8 +23,7 @@ namespace CharacterTypes
             this.intelligence = 5;
             this.strength = 5;
             this.vitality = 5;
-            this.AddCoin(500);
-            this.xp += 1000;
+            this.xp += 50000;
         }
 
         public void SpendCoin(int amount)

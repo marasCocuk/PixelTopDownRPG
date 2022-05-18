@@ -9,6 +9,7 @@ namespace InventorySystem
     {
         public string name;
         public int price;
+        public Sprite itemPicture;
 
         public virtual void ExecuteItem(CharacterDetails character)
         {

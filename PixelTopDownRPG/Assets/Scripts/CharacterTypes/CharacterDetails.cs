@@ -108,9 +108,23 @@ namespace CharacterTypes
             }
         }
 
+        /// <summary>
+        /// Self consume item. Applies the effects to itself.
+        /// </summary>
+        /// <param name="index"></param>
         public void ConsumeItem(int index)
         {
             ConsumableInventory[index].ExecuteItem(this);
+            ConsumableInventory.RemoveAt(index);
+        }
+
+        /// We can use items on other people, between companions or ourselves. Enemies should be able to do this too.
+        /// </summary>
+        /// <param name="character"></param>
+        /// <param name="index"></param>
+        public void ConsumeItem(CharacterDetails character, int index)
+        {
+            ConsumableInventory[index].ExecuteItem(character);
             ConsumableInventory.RemoveAt(index);
         }
 
