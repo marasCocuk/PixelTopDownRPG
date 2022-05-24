@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Actions.Attacks;
 using InventorySystem.Consumables;
+using InventorySystem;
+using InventorySystem.Outfit;
 
 namespace CharacterTypes
 {
@@ -56,11 +58,17 @@ namespace CharacterTypes
         /// Actions
         /// </summary>
 
-        public List<Attack> attacks;
+        public List<Attack> attacks = new List<Attack>();
 
-        public List<Attack> weaknesses;
+        public List<Attack> weaknesses = new List<Attack>();
 
-        public List<Consumables> ConsumableInventory;
+        public List<Item> Inventory = new List<Item>();
+
+        public List<Consumables> ConsumableInventory = new List<Consumables>();
+
+        /// <summary>
+        /// Equipped Items
+        /// </summary>
 
         public void Start()
         {
