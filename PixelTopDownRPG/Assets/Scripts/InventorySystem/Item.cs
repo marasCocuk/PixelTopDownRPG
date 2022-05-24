@@ -11,7 +11,7 @@ namespace InventorySystem
         public int price;
         public Sprite itemPicture;
 
-        public virtual void ExecuteItem(CharacterDetails character)
+        public virtual void ExecuteItem(CharacterManager character)
         {
         }
     }

@@ -16,7 +16,7 @@ namespace InventorySystem.Consumables
             this.healthAmount = healthAmount;
         }
 
-        public override void ExecuteItem(CharacterDetails character)
+        public override void ExecuteItem(CharacterManager character)
         {
             base.ExecuteItem(character);
             character.Heal(healthAmount);

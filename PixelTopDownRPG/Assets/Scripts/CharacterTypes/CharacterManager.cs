@@ -9,7 +9,7 @@ namespace CharacterTypes
     /// <summary>
     /// A class that is going to keep all character properties.
     /// </summary>
-    public abstract class CharacterDetails : MonoBehaviour
+    public abstract class CharacterManager : MonoBehaviour
     {
         /// <summary>
         ///Important Values
@@ -78,7 +78,7 @@ namespace CharacterTypes
             }
         }
 
-        //public CharacterDetails(int level, int strength, int vitality, int intelligence, int baseHealth = 500, int baseStamina = 100, int baseMagic = 0, int basisXpForRequiredToLevelUp = 100)
+        //public CharacterManager(int level, int strength, int vitality, int intelligence, int baseHealth = 500, int baseStamina = 100, int baseMagic = 0, int basisXpForRequiredToLevelUp = 100)
         //{
         //    this.level = level;
         //    this.strength = strength;
@@ -122,7 +122,7 @@ namespace CharacterTypes
         /// </summary>
         /// <param name="character"></param>
         /// <param name="index"></param>
-        public void ConsumeItem(CharacterDetails character, int index)
+        public void ConsumeItem(CharacterManager character, int index)
         {
             ConsumableInventory[index].ExecuteItem(character);
             ConsumableInventory.RemoveAt(index);
