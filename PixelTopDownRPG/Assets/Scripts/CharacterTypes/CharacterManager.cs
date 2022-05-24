@@ -86,6 +86,34 @@ namespace CharacterTypes
             }
         }
 
+
+        #region Item
+        /// <summary>
+        /// Self consume item. Applies the effects to itself.
+        /// </summary>
+        /// <param name="index"></param>
+        public void ConsumeItem(int index)
+        {
+            ConsumeItem(this, index);
+        }
+
+        /// We can use items on other people, between companions or ourselves. Enemies should be able to do this too.
+        /// </summary>
+        /// <param name="character"></param>
+        /// <param name="index"></param>
+        public void ConsumeItem(CharacterManager character, int index)
+        {
+            ConsumableInventory[index].ExecuteItem(character);
+            ConsumableInventory.RemoveAt(index);
+        }
+        #endregion
+
+
+
+        #region Experience
+
+
+
         /// <summary>
         /// Character levels up
         /// </summary>
@@ -105,25 +133,6 @@ namespace CharacterTypes
                 currentMagic = maxMagic;
                 currentStamina = maxStamina;
             }
-        }
-
-        /// <summary>
-        /// Self consume item. Applies the effects to itself.
-        /// </summary>
-        /// <param name="index"></param>
-        public void ConsumeItem(int index)
-        {
-            ConsumeItem(this, index);
-        }
-
-        /// We can use items on other people, between companions or ourselves. Enemies should be able to do this too.
-        /// </summary>
-        /// <param name="character"></param>
-        /// <param name="index"></param>
-        public void ConsumeItem(CharacterManager character, int index)
-        {
-            ConsumableInventory[index].ExecuteItem(character);
-            ConsumableInventory.RemoveAt(index);
         }
 
         /// <summary>
@@ -158,6 +167,15 @@ namespace CharacterTypes
             requiredXp = basisXpForRequiredToLevelUp + (level * level * 1000);
         }
 
+
+
+        #endregion
+
+        #region Attack
+
+
+
+
         /// <summary>
         /// execute attack
         /// </summary>
@@ -168,6 +186,30 @@ namespace CharacterTypes
 
             //Get the power of the attack
             totalAttackPower = at.AttackPower + GetStrengthPower();
+        }
+
+        /// <summary>
+        /// Random attack
+        /// </summary>
+        public void RandomAttack(CharacterManager enemy)
+        {
+            int index = Random.Range(0, attacks.Count + 1);
+            Attack(attacks[index], enemy);
+        }
+
+        /// <summary>
+        /// Character Health Decrease
+        /// </summary>
+        /// <param name="amount"></param>
+        public void TakeDamage(int amount)
+        {
+            UpdateHealth();
+            currentHealth -= amount;
+
+            if (currentHealth <= 0)
+            {
+                currentHealth = 0;
+            }
         }
 
         /// <summary>
@@ -186,14 +228,10 @@ namespace CharacterTypes
             return false;
         }
 
-        /// <summary>
-        /// Random attack
-        /// </summary>
-        public void RandomAttack(CharacterManager enemy)
-        {
-            int index = Random.Range(0, attacks.Count + 1);
-            Attack(attacks[index], enemy);
-        }
+
+
+        #endregion
+
 
         /// <summary>
         /// Character health increase
@@ -210,19 +248,7 @@ namespace CharacterTypes
             }
         }
 
-        /// <summary>
-        /// Character Health Decrease
-        /// </summary>
-        /// <param name="amount"></param>
-        public void TakeDamage(int amount)
-        {
-            UpdateHealth();
-            currentHealth -= amount;
 
-            if (currentHealth <= 0)
-            {
-                currentHealth = 0;
-            }
-        }
+
     }
 }

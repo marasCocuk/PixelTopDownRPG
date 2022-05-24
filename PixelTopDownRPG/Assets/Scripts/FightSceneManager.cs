@@ -8,7 +8,6 @@ namespace GameMaster
 {
     public class FightSceneManager : MonoBehaviour
     {
-
         GameObject player;
         List<GameObject> enemies;
 
@@ -28,7 +27,6 @@ namespace GameMaster
             player.AddComponent<PlayerManager>();
             player.AddComponent<SpriteRenderer>();
             player.tag = "Player";
-
         }
 
         /// <summary>
