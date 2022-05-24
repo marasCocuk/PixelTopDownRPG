@@ -10,10 +10,6 @@ namespace Actions.Attacks
         {
 
         }
-        override public void ExecuteAttack(/*Belli bir character*/)
-        {
-            // Karakterin canını bir miktar düşür.
-        }
 
     }
 }

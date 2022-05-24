@@ -2,12 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-namespace Actions
+namespace Actions.Support
 {
-    public abstract class Buff : Action
+    public class Heal : Support
     {
-
     }
 }
-

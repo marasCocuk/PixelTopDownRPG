@@ -15,6 +15,9 @@ namespace CharacterTypes
         ///Important Values
         /// </summary>
 
+
+
+
         public string characterName;
 
         //Health
@@ -69,7 +72,13 @@ namespace CharacterTypes
             UpdateMaxXp();
             UpdateStamina();
         }
+        public void fonk(Attack character)
+        {
+            if (character is AirAttack)
+            {
 
+            }
+        }
         public void Update()
         {
             if (xp >= requiredXp)
@@ -118,6 +127,8 @@ namespace CharacterTypes
             ConsumableInventory.RemoveAt(index);
         }
 
+
+
         /// We can use items on other people, between companions or ourselves. Enemies should be able to do this too.
         /// </summary>
         /// <param name="character"></param>
@@ -164,9 +175,9 @@ namespace CharacterTypes
         /// execute attack
         /// </summary>
         /// <param name="at">direct attack</param>
-        public void Attack(Attack at)
+        public void Attack(Attack at, CharacterManager character)
         {
-            at.ExecuteAttack();
+
         }
 
         /// <summary>
@@ -175,7 +186,7 @@ namespace CharacterTypes
         public void RandomAttack()
         {
             int index = Random.Range(0, attacks.Count + 1);
-            Attack(attacks[index]);
+
         }
 
         /// <summary>
@@ -201,6 +212,7 @@ namespace CharacterTypes
         {
             UpdateHealth();
             currentHealth -= amount;
+
             if (currentHealth <= 0)
             {
                 currentHealth = 0;

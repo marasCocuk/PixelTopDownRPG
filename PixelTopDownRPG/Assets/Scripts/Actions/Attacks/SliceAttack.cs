@@ -9,9 +9,6 @@ namespace Actions.Attacks
         public SliceAttack(int attackPower, string attackName) : base(attackPower, attackName)
         {
         }
-        override public void ExecuteAttack(/*Belli bir character*/)
-        {
-            // Karakterin canını bir miktar düşür.
-        }
+
     }
 }

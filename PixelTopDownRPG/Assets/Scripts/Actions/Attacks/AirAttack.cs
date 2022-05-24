@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using CharacterTypes;
 
 namespace Actions.Attacks
 {
@@ -10,10 +11,7 @@ namespace Actions.Attacks
         {
 
         }
-        override public void ExecuteAttack(/*Belli bir character*/)
-        {
-            // Karakterin canını bir miktar düşür.
-        }
+
 
     }
 }

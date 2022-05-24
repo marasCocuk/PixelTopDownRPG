@@ -15,7 +15,6 @@ namespace GameMaster
         private void Start()
         {
             enemies = new List<GameObject>();
-
             CreatePlayer();
         }
 

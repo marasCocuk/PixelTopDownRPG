@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Actions.Buffs
+
+namespace Actions.Support
 {
-    public class Health : Buff
+    public abstract class Support : Action
     {
+
     }
 }
+
