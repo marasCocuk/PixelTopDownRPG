@@ -6,5 +6,7 @@ namespace Actions.Support
 {
     public class Heal : Support
     {
+        
+
     }
 }
