@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Actions.Attacks;
+using Actions;
 using InventorySystem;
 
 namespace CharacterTypes

@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Actions.Attacks;
+using Actions;
 using InventorySystem.Consumables;
 using InventorySystem;
 using InventorySystem.Outfit;
@@ -60,7 +60,7 @@ namespace CharacterTypes
 
         public List<Attack> attacks = new List<Attack>();
 
-        public List<Attack> weaknesses = new List<Attack>();
+        public List<AttackType> weaknesses = new List<AttackType>();
 
         public List<Item> Inventory = new List<Item>();
 

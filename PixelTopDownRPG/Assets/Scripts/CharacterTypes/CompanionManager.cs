@@ -14,8 +14,6 @@ namespace CharacterTypes
         //    this.name = name;
         //}
 
-        public override void Death()
-        {
-        }
+
     }
 }
