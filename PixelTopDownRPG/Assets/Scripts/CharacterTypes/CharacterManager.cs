@@ -17,9 +17,6 @@ namespace CharacterTypes
         ///Important Values
         /// </summary>
 
-
-
-
         public string characterName;
 
         //Health
@@ -80,13 +77,7 @@ namespace CharacterTypes
             UpdateMaxXp();
             UpdateStamina();
         }
-        public void fonk(Attack character)
-        {
-            if (character is AirAttack)
-            {
 
-            }
-        }
         public void Update()
         {
             if (xp >= requiredXp)
@@ -95,18 +86,9 @@ namespace CharacterTypes
             }
         }
 
-        //public CharacterManager(int level, int strength, int vitality, int intelligence, int baseHealth = 500, int baseStamina = 100, int baseMagic = 0, int basisXpForRequiredToLevelUp = 100)
-        //{
-        //    this.level = level;
-        //    this.strength = strength;
-        //    this.vitality = vitality;
-        //    this.intelligence = intelligence;
-        //    this.baseHealth = baseHealth;
-        //    this.baseStamina = baseStamina;
-        //    this.baseMagic = baseMagic;
-        //    this.basisXpForRequiredToLevelUp = basisXpForRequiredToLevelUp;
-        //}
-
+        /// <summary>
+        /// Character levels up
+        /// </summary>
         public void levelUp(/*prototip*/)
         {
             if (xp >= requiredXp)
@@ -131,11 +113,8 @@ namespace CharacterTypes
         /// <param name="index"></param>
         public void ConsumeItem(int index)
         {
-            ConsumableInventory[index].ExecuteItem(this);
-            ConsumableInventory.RemoveAt(index);
+            ConsumeItem(this, index);
         }
-
-
 
         /// We can use items on other people, between companions or ourselves. Enemies should be able to do this too.
         /// </summary>
@@ -183,18 +162,37 @@ namespace CharacterTypes
         /// execute attack
         /// </summary>
         /// <param name="at">direct attack</param>
-        public void Attack(Attack at, CharacterManager character)
+        public void Attack(Attack at, CharacterManager enemy)
         {
+            int totalAttackPower = 0;
 
+            //Get the power of the attack
+            totalAttackPower = at.AttackPower + GetStrengthPower();
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <returns></returns>
+        private int GetStrengthPower()
+        {
+            int strengthPower = (strength * 10) + level * Random.Range(0, 21);
+
+            return strengthPower;
+        }
+
+        public bool AttackCheck()
+        {
+            return false;
         }
 
         /// <summary>
         /// Random attack
         /// </summary>
-        public void RandomAttack()
+        public void RandomAttack(CharacterManager enemy)
         {
             int index = Random.Range(0, attacks.Count + 1);
-
+            Attack(attacks[index], enemy);
         }
 
         /// <summary>
@@ -224,15 +222,7 @@ namespace CharacterTypes
             if (currentHealth <= 0)
             {
                 currentHealth = 0;
-                Death();
             }
-        }
-
-        /// <summary>
-        /// Character Dies
-        /// </summary>
-        public virtual void Death()
-        {
         }
     }
 }
