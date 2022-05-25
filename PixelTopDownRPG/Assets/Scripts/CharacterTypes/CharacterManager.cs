@@ -76,6 +76,7 @@ namespace CharacterTypes
             UpdateMagic();
             UpdateMaxXp();
             UpdateStamina();
+            attacks.Add(new Attack(100, "Attack"));
         }
 
         public void Update()
@@ -86,8 +87,8 @@ namespace CharacterTypes
             }
         }
 
-
         #region Item
+
         /// <summary>
         /// Self consume item. Applies the effects to itself.
         /// </summary>
@@ -106,13 +107,10 @@ namespace CharacterTypes
             ConsumableInventory[index].ExecuteItem(character);
             ConsumableInventory.RemoveAt(index);
         }
-        #endregion
 
-
+        #endregion Item
 
         #region Experience
-
-
 
         /// <summary>
         /// Character levels up
@@ -167,14 +165,9 @@ namespace CharacterTypes
             requiredXp = basisXpForRequiredToLevelUp + (level * level * 1000);
         }
 
-
-
-        #endregion
+        #endregion Experience
 
         #region Attack
-
-
-
 
         /// <summary>
         /// execute attack
@@ -228,10 +221,7 @@ namespace CharacterTypes
             return false;
         }
 
-
-
-        #endregion
-
+        #endregion Attack
 
         /// <summary>
         /// Character health increase
@@ -247,8 +237,5 @@ namespace CharacterTypes
                 currentHealth = maxHealth;
             }
         }
-
-
-
     }
 }
