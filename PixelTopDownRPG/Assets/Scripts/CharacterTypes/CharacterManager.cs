@@ -13,6 +13,8 @@ namespace CharacterTypes
     /// </summary>
     public abstract class CharacterManager : MonoBehaviour
     {
+        #region Global Variables
+
         /// <summary>
         ///Important Values
         /// </summary>
@@ -44,6 +46,8 @@ namespace CharacterTypes
         public int xp;
         public int requiredXp;
         public int upgradePoints = 0;
+
+        #endregion Global Variables
 
         /// <summary>
         /// Stats
