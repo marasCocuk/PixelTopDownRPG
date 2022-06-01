@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance { get; private set; }
 
+    private List<IDataPersistance> dataPersistanceObjects;
+
     private GameData gameData;
 
     private void Awake()

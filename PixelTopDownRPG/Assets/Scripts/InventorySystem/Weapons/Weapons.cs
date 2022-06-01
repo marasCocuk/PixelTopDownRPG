@@ -10,10 +10,8 @@ namespace InventorySystem.Weapons
         public int attackPower;
         public int manaCost;
         public int staminaCost;
-        int[] requiredProperties;
+        private int[] requiredProperties;
 
-
-        List<Support> weaponBuffs = new List<Support>();
-
+        private List<Support> weaponBuffs = new List<Support>();
     }
 }
