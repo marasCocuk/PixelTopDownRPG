@@ -11,7 +11,7 @@ namespace CharacterTypes
     /// <summary>
     /// A class that is going to keep all character properties.
     /// </summary>
-    public abstract class CharacterManager : MonoBehaviour
+    public abstract class CharacterManager : MonoBehaviour, IDataPersistance
     {
         #region Global Variables
 
@@ -240,6 +240,20 @@ namespace CharacterTypes
             {
                 currentHealth = maxHealth;
             }
+        }
+
+        /// <summary>
+        /// Save and Load
+        /// </summary>
+        /// <param name="gameData"></param>
+        public void LoadData(GameData gameData)
+        {
+            strength = gameData.test;
+        }
+
+        public void SaveData(ref GameData gameData)
+        {
+            gameData.test = strength;
         }
     }
 }
